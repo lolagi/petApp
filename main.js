@@ -80,7 +80,7 @@ constructor(name,colour,gender)
 	this._cleaness=50;
 	this._sleep=80;
 	this._availableTricks=['jump','roll','speak'];
-	this._learnedTricks= ['nothing'];
+	this._learnedTricks= [];
 
 	//states
 	this._asleep=true;
@@ -273,7 +273,7 @@ feed()
 	if(this._hunger<=70)
 	{
 
-		this._thirst+=30;	
+		this._hunger+=30;	
 		console.log('Hunger level: ' + this._hunger)
 	}
 	else
@@ -486,15 +486,18 @@ let colour = readline.question('What colour does '+ name +' have?   ');
 const myPet= new Pet(name,colour,gender);
 
 
-const choices=['1','2','3','4','5','6','7','8','9'];
+const choices=['1','2','3','4','5','6','7','8','9','10'];
 let choice ;
-while(!choices.includes(choice))
+
+
+quit=false
+while(!quit)
+{ choice ='0';
+	while(!choices.includes(choice))
 {
-	choice = readline.question('What would you like to do?\n1. Get Stats\n2. Give Water \n3. Feed\n4. Cuddle\n5. Clean\n6. Teach Trick\n7. Do Trick\n8. Play\n9. Wakeup\n')
+	choice = readline.question('What would you like to do?\n1. Get Stats\n2. Give Water \n3. Feed\n4. Cuddle\n5. Clean\n6. Teach Trick\n7. Do Trick\n8. Play\n9. Wakeup\n10. Quit\n')
 
 }
-
-
 switch(choice)
 {
 	case '1':
@@ -528,4 +531,7 @@ switch(choice)
 	case '9':
 		myPet.wakeup();
 		break;
+	case '10':
+		quit=true;
+}
 }

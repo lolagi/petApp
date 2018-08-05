@@ -80,7 +80,7 @@ constructor(name,colour,gender)
 	this._cleaness=50;
 	this._sleep=80;
 	this._availableTricks=['jump','roll','speak'];
-	this._learnedTricks= [];
+	this._learnedTricks= [''];
 
 	//states
 	this._asleep=true;
@@ -90,6 +90,8 @@ constructor(name,colour,gender)
 }
 
 //getter functions
+
+
 
 get name()
 {
@@ -110,8 +112,9 @@ get gender()
 };
 
 get age()
-{
+{	console.log('here');
 	console.log('Age = '+ this._age);
+	
 	return this._age;
 };
 
@@ -222,7 +225,6 @@ getStats()
 	this.colour;
 	this.gender;
 	console.log('');
-
 	this.age;
 	this.health;
 	this.thirst;
@@ -419,10 +421,7 @@ wakeup()
 }
 
 //not called by user
-age()
-{
-	this._age++;
-}
+
 reduceHealth()
 {
 	if(this._water<=10 || this._thirst <=10 || this._cleaness <=5 || this._love <=5)
@@ -433,14 +432,22 @@ reduceHealth()
 
 die()
 {
-	if(health<=0)
+	if(this._health<=0)
 	{
 		this._alive=false;
+		console.log(this.name + ' died.')
+	}
+	else if(this._age>=100)
+	{
+		this._alive=false;
+		console.log(this.name + ' died.')
 	}
 }
 
 live()
 {
+//fix that it goes into minus
+
 	this._thirst-=10;
 	this._hunger-=5;
 	this._cleaness-=2;
@@ -453,6 +460,12 @@ live()
 	{
 		this._sleep-=10;
 	}
+
+	this._age++;
+	this.reduceHealth();
+	this.sleep();
+	this.die();
+
 }
 
 sleep()
@@ -468,6 +481,14 @@ sleep()
 
 
 /////////////////////////////////////////////////////////////////////////////////
+
+function passTime()
+{
+	myPet.age;
+	myPet.live();
+	myPet.getStats();
+	timer++;
+}
 
 
 const readline = require('readline-sync');
@@ -489,15 +510,25 @@ const myPet= new Pet(name,colour,gender);
 const choices=['1','2','3','4','5','6','7','8','9','10'];
 let choice ;
 
+let timer =0;
+
+
+setInterval(passTime,5000);
+
 
 quit=false
-while(!quit)
-{ choice ='0';
+while(!quit&&this.alive)
+{ 
+	
+	choice ='0';
+
 	while(!choices.includes(choice))
 {
 	choice = readline.question('What would you like to do?\n1. Get Stats\n2. Give Water \n3. Feed\n4. Cuddle\n5. Clean\n6. Teach Trick\n7. Do Trick\n8. Play\n9. Wakeup\n10. Quit\n')
 
 }
+
+
 switch(choice)
 {
 	case '1':
@@ -535,3 +566,5 @@ switch(choice)
 		quit=true;
 }
 }
+
+

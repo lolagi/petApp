@@ -13,12 +13,21 @@
       </tr>
       <tr>
         <td></td>
-        <td rowspan="12"><img src="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogs.jpg?1533499177995"></td>
+        <td rowspan="9"><img src="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogs.jpg?1533499177995"></td>
         <td>Name:<input placeholder="Fluffy" type="string" name="Name"></td>
+
       </tr>
       <tr>
         <td> <button type="button" (click)="myPet.wakeUp()" >Wake Up</button></td>
-        <td>Colour:<input placeholder="Grey" type="string" name="Name"></td>
+        <td>Colour:
+          <select name="Colour">
+            <option value="volvo">Grey</option>
+            <option value="saab">Brown</option>
+            <option value="fiat">Black</option>
+            <option value="audi">White</option>
+            <option value="audi">Spots</option>
+          </select>            
+        </td>
       </tr>
       <tr>
         <td><button type="button">Do Trick</button></td>
@@ -55,8 +64,10 @@
       </tr>
       <tr>
         <td><button type="button" (click)="myPet.clean()">Clean</button></td>
+        <td>
+          <button type="button" (click)="myPet.live()">Pass Time</button>
+        </td>
         <td><p>Hygine </p><progress id="Hygine" value= {{myPet.cleaness}}  max="100"> </progress></td>
-        <td><script src="/script.js"> myPet.health()</script></td>
       </tr>
       
       

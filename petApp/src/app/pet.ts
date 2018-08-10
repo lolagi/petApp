@@ -107,6 +107,10 @@ get availableTricks()
 	return this._availableTricks;
 };
 
+changeName(name)
+{
+ this._name=name;
+}
 
 /////////////Public methods///////////////
 giveWater()

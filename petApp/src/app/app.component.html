@@ -1,0 +1,67 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <table>
+      <tr>
+        <th>Actions</th>
+        <th>{{myPet.name}}</th>
+        <th>Stats</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>{{myPet.asleep}}</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td></td>
+        <td rowspan="12"><img src="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogs.jpg?1533499177995"></td>
+        <td>Name:<input placeholder="Fluffy" type="string" name="Name"></td>
+      </tr>
+      <tr>
+        <td> <button type="button" (click)="myPet.wakeUp()" >Wake Up</button></td>
+        <td>Colour:<input placeholder="Grey" type="string" name="Name"></td>
+      </tr>
+      <tr>
+        <td><button type="button">Do Trick</button></td>
+        <td>Gender: 
+          <form>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td><button type="button">Teach Trick</button></td>
+        <td>Age:{{myPet.age}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><p>Health  </p><progress id="Health" value={{myPet.health}} max="100"></progress></td>
+      </tr>
+      <tr>
+        <td><button type="button" (click)="myPet.giveWater()">Give Water</button></td>
+        <td><p>Thirst </p><progress id="Thirst" value={{myPet.thirst}} max="100"></progress></td>
+      </tr>
+      <tr>
+        <td><button type="button" (click)= "myPet.feed()">Feed</button></td>
+        <td><p>Hunger </p><progress id="Hunger" value={{myPet.hunger}} max="100"></progress></td>
+      </tr>
+      <tr>
+        <td><button type="button" (click)="myPet.cuddle()">Cuddle</button></td>
+        <td><p>Love </p><progress id="Love" value={{myPet.love}} max="100"></progress></td>
+      </tr>
+      <tr>
+       <td><button type="button" (click)="myPet.play()">Play</button></td>
+        <td><p>Sleep </p><progress id="Sleep" value={{myPet.sleep}} max="100"></progress></td>
+      </tr>
+      <tr>
+        <td><button type="button" (click)="myPet.clean()">Clean</button></td>
+        <td><p>Hygine </p><progress id="Hygine" value= {{myPet.cleaness}}  max="100"> </progress></td>
+        <td><script src="/script.js"> myPet.health()</script></td>
+      </tr>
+      
+      
+      
+    </table>
+</div>
+
+

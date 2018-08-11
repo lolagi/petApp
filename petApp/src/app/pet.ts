@@ -108,7 +108,7 @@ get availableTricks()
 	return this._availableTricks;
 };
 
-get stateImageUrl
+get stateImageUrl()
 {
 	console.log(this._stateImageUrl)
 	return this._stateImageUrl;
@@ -342,18 +342,22 @@ checkSleep()
 
 imageChange()
 {
-	if(this._asleep)
-	{
-		this._stateImageUrl="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogsSleeping.jpg?1533985707706";
-	}
 	if(!this._alive)
 	{
 		this._stateImageUrl="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDead.jpg?1533988870786";
 	}
+	else{
+		if(this._asleep)
+	{
+		this._stateImageUrl="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogsSleeping.jpg?1533985707706";
+	}
+	
 	else
 	{
 		this._stateImageUrl="https://cdn.glitch.com/03b12a9f-25f3-4880-9570-833358aa085f%2FDogs.jpg?1533499177995";
 	}
+	}
+	
 }
 
 }

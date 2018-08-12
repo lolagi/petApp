@@ -1,0 +1,38 @@
+.statsLayout
+{
+	background-color: LemonChiffon;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+}
+
+.petLayout
+{
+	background-color: Moccasin;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.masterLayout
+{
+	background-color: PeachPuff;
+	display: flex;
+	flex-direction: column;
+}
+
+.childLayout1
+{
+	background-color: PeachPuff;
+	display: flex;
+	flex-direction: row;
+}
+
+.item
+{
+	flex-grow: 1;
+}

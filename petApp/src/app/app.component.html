@@ -1,78 +1,56 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <table>
-      <tr>
-        <th>Actions</th>
-        <th>{{myPet.name}}</th>
-        <th>Stats</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th>{{myPet.asleep}}</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td></td>
-        <td rowspan="9"><img src={{myPet.stateImageUrl}} height="620" width="820"></td>
-        <td>Name:<input placeholder="Fluffy" type="string" name="Name"></td>
 
-      </tr>
-      <tr>
-        <td> <button type="button" (click)="myPet.wakeUp()" >Wake Up</button></td>
-        <td>Colour:
-          <select name="Colour">
-            <option value="volvo">Grey</option>
-            <option value="saab">Brown</option>
-            <option value="fiat">Black</option>
-            <option value="audi">White</option>
-            <option value="audi">Spots</option>
-          </select>            
-        </td>
-      </tr>
-      <tr>
-        <td><button type="button">Do Trick</button></td>
-        <td>Gender: 
-          <form>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td><button type="button">Teach Trick</button></td>
-        <td>Age:{{myPet.age}}</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><p>Health  </p><progress id="Health" value={{myPet.health}} max="100"></progress></td>
-      </tr>
-      <tr>
-        <td><button type="button" (click)="myPet.giveWater()">Give Water</button></td>
-        <td><p>Thirst </p><progress id="Thirst" value={{myPet.thirst}} max="100"></progress></td>
-      </tr>
-      <tr>
-        <td><button type="button" (click)= "myPet.feed()">Feed</button></td>
-        <td><p>Hunger </p><progress id="Hunger" value={{myPet.hunger}} max="100"></progress></td>
-      </tr>
-      <tr>
-        <td><button type="button" (click)="myPet.cuddle()">Cuddle</button></td>
-        <td><p>Love </p><progress id="Love" value={{myPet.love}} max="100"></progress></td>
-      </tr>
-      <tr>
-       <td><button type="button" (click)="myPet.play()">Play</button></td>
-        <td><p>Sleep </p><progress id="Sleep" value={{myPet.sleep}} max="100"></progress></td>
-      </tr>
-      <tr>
-        <td><button type="button" (click)="myPet.clean()">Clean</button></td>
-        <td>
-          <button type="button" (click)="myPet.live()">Pass Time</button>
-        </td>
-        <td><p>Hygine </p><progress id="Hygine" value= {{myPet.cleaness}}  max="100"> </progress></td>
-      </tr>
+
+<div class="masterLayout">
+  <h1>This is a Pet App</h1>
+  <div class="childLayout1">
+    <div class="statsLayout">
+      <h2> Actions</h2>
+      <button class="item" type="button" (click)="myPet.wakeUp()" >Wake Up</button>
+      <button class="item" type="button">Do Trick</button>
+      <button class="item" type="button">Teach Trick</button>
+      <button class="item" type="button" (click)="myPet.giveWater()">Give Water</button>
+      <button class="item" type="button" (click)= "myPet.feed()">Feed</button>
+      <button class="item" type="button" (click)="myPet.cuddle()">Cuddle</button>
+      <button class="item" type="button" (click)="myPet.play()">Play</button>
+      <button class="item" type="button" (click)="myPet.clean()">Clean</button>
+      <button class="item" type="button" (click)="myPet.live()">Pass Time</button>
+    </div>
+    <div class="petLayout">
+      <h2>{{myPet.name}}</h2>
+      <p>{{myPet.asleep}}</p>
+      <img src={{myPet.stateImageUrl}} height="620" width="820">
+    </div>
+    <div class="statsLayout">
+      <h2> Stats</h2>
+      <p class="item">Name:<input placeholder="Fluffy" type="string" name="Name">
+      </p>
+      <p class="item">Colour:
+        <select name="Colour">
+          <option value="volvo">Grey</option>
+          <option value="saab">Brown</option>
+          <option value="fiat">Black</option>
+          <option value="audi">White</option>
+          <option value="audi">Spots</option>
+        </select>
+      </p>
+      <form class="item">Gender:
+          <input type="radio" name="gender" value="male" checked> Male<br>
+          <input type="radio" name="gender" value="female"> Female<br>
+      </form>
       
-      
-      
-    </table>
+      <p class="item">Age:{{myPet.age}}</p>
+      <p class="item">Health <progress id="Health" value={{myPet.health}} max="100"></progress></p>
+      <p class="item">Thirst <progress id="Thirst" value={{myPet.thirst}} max="100"></progress></p>
+      <p class="item">Hunger <progress id="Hunger" value={{myPet.hunger}} max="100"></progress></p>
+      <p class="item">Love <progress id="Love" value={{myPet.love}} max="100"></progress></p>
+      <p class="item">Sleep <progress id="Sleep" value={{myPet.sleep}} max="100"></progress></p>
+      <p class="item">Hygine <progress id="Hygine" value= {{myPet.cleaness}}  max="100"> </progress></p>
+    </div>
+  </div>
 </div>
+
+        
+
 
 

@@ -7,23 +7,43 @@
     <div class="statsLayout">
       <h2> Actions</h2>
       <button class="item" type="button" (click)="myPet.wakeUp()" >Wake Up</button>
-      <button class="item" type="button">Do Trick</button>
-      <button class="item" type="button">Teach Trick</button>
       <button class="item" type="button" (click)="myPet.giveWater()">Give Water</button>
       <button class="item" type="button" (click)= "myPet.feed()">Feed</button>
       <button class="item" type="button" (click)="myPet.cuddle()">Cuddle</button>
       <button class="item" type="button" (click)="myPet.play()">Play</button>
       <button class="item" type="button" (click)="myPet.clean()">Clean</button>
+      
+      <div class=item>
+        Trick: 
+        <select>
+          <option>{{myPet.availableTricks[0]}}</option>
+          <option>{{myPet.availableTricks[1]}}</option>
+          <option>{{myPet.availableTricks[2]}}</option>
+        </select>
+        <button class="item" type="button">Teach Trick</button>
+      </div>
+      <div class=item>
+        Trick: 
+        <select>
+          <option>{{myPet.learnedTricks[0]}}</option>
+          <option>{{myPet.learnedTricks[1]}}</option>
+          <option>{{myPet.learnedTricks[2]}}</option>
+        </select>
+        <button class="item" type="button">Do Trick</button>
+      </div>
+      
+
       <button class="item" type="button" (click)="myPet.live()">Pass Time</button>
     </div>
     <div class="petLayout">
       <h2>{{myPet.name}}</h2>
       <p>{{myPet.asleep}}</p>
-      <img src={{myPet.stateImageUrl}} height="620" width="820">
+      <!--<iframe src="https://harmonious-lobster.glitch.me/" height="500" width="500"></iframe>-->
+      <img src={{myPet._stateImageUrl}} width="500">
     </div>
     <div class="statsLayout">
       <h2> Stats</h2>
-      <p class="item">Name:<input placeholder="Fluffy" type="string" name="Name">
+      <p class="item">Name:<input  placeholder="Fluffy" type="string" name="Name" [(ngModel)]="myPet.name">
       </p>
       <p class="item">Colour:
         <select name="Colour">
@@ -35,7 +55,7 @@
         </select>
       </p>
       <form class="item">Gender:
-          <input type="radio" name="gender" value="male" checked> Male<br>
+          <input  type="radio" name="gender" value="male" checked> Male<br>
           <input type="radio" name="gender" value="female"> Female<br>
       </form>
       

@@ -114,10 +114,23 @@ get stateImageUrl()
 	return this._stateImageUrl;
 }
 
-changeName(name)
+set name(name)
 {
  this._name=name;
 }
+
+set colour(colour)
+{
+ console.log(colour)
+ this._colour=colour;
+}
+
+set gender(gender)
+{
+ console.log(gender)
+ this._gender=gender;
+}
+
 
 /////////////Public methods///////////////
 giveWater()
